@@ -2,9 +2,11 @@ from django.urls import path
 
 from . import views
 
+app_name = 'inventory'
 urlpatterns = [
-    # ex: /items/
-    path('', views.index, name='index'),
-    # ex. /items/4/
-    path('<int:item_id>/', views.detail, name='detail')
-]
+    path('', views.list, name='list'),
+    path('items/<int:item_id>/', views.detail, name='detail'),
+    path('update/<int:item_id>/', views.update, name='update'),
+    path('delete/<int:item_id>/', views.delete, name='delete'),
+    path('create/', views.create, name='create'),
+]   

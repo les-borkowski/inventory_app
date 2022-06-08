@@ -8,6 +8,14 @@
 </head>
 <body>
     <p>{{ item }}</p>
+    <div>
+        <span>
+            <a href="{% url 'inventory:update' item.id %}">Update</a>
+        </span>
+        <span>
+            <a href="{% url 'inventory:delete' item.id %}">Delete</a>
+        </span>
+    </div>
 </body>
 </html>
 

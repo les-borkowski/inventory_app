@@ -10,13 +10,13 @@
     {% if items_list %}
         <ul>
             {% for item in items_list %}
-            <li><a href="/inventory/{{ item.id }}">{{ item.name }} </a> </li>
+            <li><a href="{% url 'inventory:detail' item.id %}">{{ item.name }} </a> </li>
             {% endfor %}
         </ul>
     {% else %}
         <p> Inventory empty</p>
     {% endif %}
         
-
+    <a href="{% url 'inventory:create' %}">Create new item</a>
 </body>
 </html>
