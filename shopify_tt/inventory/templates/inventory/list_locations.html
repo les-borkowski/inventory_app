@@ -1,0 +1,43 @@
+{% extends 'inventory/base/base.html' %}
+
+{% block title %}Locations list{% endblock %}
+
+{% block body %}
+<div>
+    <!-- list of locations -->
+    <h2> Locations list</h2>
+    {% if locations_list %}
+        <table class="table">
+            <tr>
+                <th>Id</th>
+                <th>Name</th>
+            </tr>
+            {% for location in locations_list %}
+            <tr>
+                <td><p>{{ location.id }} </p> </td>
+                <td><p>{{ location.name }} </p> </td>
+                <td><a href="{% url 'inventory:delete_location' location.id %}">Delete </a> </td>
+            </tr>
+            {% endfor %}
+        </table>
+    {% else %}
+        <p> Locations list empty</p>
+    {% endif %}
+    <br/>
+
+    <!-- add locatioon form -->
+    <h4>Add location form</h4>
+    <form method="POST">
+        {% csrf_token %}
+        <ul>
+            {{ form.as_p }}
+        </ul>
+        <div id="form-actions">
+            <button type="submit">Add Location</button>
+        </div>
+    </form>
+    
+    <a href="{% url 'inventory:list' %}">Back to list</a>
+
+</div>
+{% endblock %}

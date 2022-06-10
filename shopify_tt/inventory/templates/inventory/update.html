@@ -1,12 +1,9 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Update Item</title>
-</head>
-<body>
+{% extends 'inventory/base/base.html' %}
+
+{% block title %}Edit Item{% endblock %}
+
+{% block body %}
+<div>
     <h2>Update item</h2>
     <form method="POST">
         {% csrf_token %}
@@ -18,5 +15,7 @@
             <button type="submit">Update Item</button>
         </div>
     </form>
-</body>
-</html>
+    <br/>
+    <a href="{% url 'inventory:list' %}">Back to list</a>
+</div>
+{% endblock %}

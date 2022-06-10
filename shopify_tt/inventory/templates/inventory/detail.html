@@ -1,13 +1,31 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>{{ item.id }}</title>
-</head>
-<body>
-    <p>{{ item }}</p>
+{% extends 'inventory/base/base.html' %}
+
+{% block title %}Item Details{% endblock %}
+
+{% block body %}
+    <!-- Item details -->
+    <div>
+        <h2>Item details</h2>
+        <table class="table">
+            <tr>
+                <th>Id</th>
+                <th>Name</th>
+                <th>Category</th>
+                <th>Item code</th>
+                <th>Location</th>
+                <th>Date added</th>
+            </tr>
+            <tr>
+                <td>{{ item.id }}</td>
+                <td>{{ item.name }}</td>
+                <td>{{ item.category }}</td>
+                <td>{{ item.item_code }}</td>
+                <td>{{ item.location }}</td>
+                <td>{{ item.added_on }}</td>
+            </tr>
+        </table>
+    </div>
+    <!-- control buttons -->
     <div>
         <span>
             <a href="{% url 'inventory:update' item.id %}">Update</a>
@@ -15,7 +33,9 @@
         <span>
             <a href="{% url 'inventory:delete' item.id %}">Delete</a>
         </span>
+        <br/>
+        <a href="{% url 'inventory:list' %}">Back to list</a>
     </div>
-</body>
-</html>
+
+{% endblock %}
 
