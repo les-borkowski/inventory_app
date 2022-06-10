@@ -5,4 +5,4 @@ __pycache__/
 db.sqlite3
 .vscode
 .vscode
-shopify_tt/shopify_tt/__pycache__
+shopify_tt/__pycache__
