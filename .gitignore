@@ -2,7 +2,5 @@
 .env
 __pycache__/
 *.pyc
-db.sqlite3
-.vscode
-.vscode
-shopify_tt/shopify_tt/__pycache__
+*.sqlite3
+shopify_tt/__pycache__
