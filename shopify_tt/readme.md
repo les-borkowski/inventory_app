@@ -1,14 +1,16 @@
 # Inventory backend app
 
 A project for Shopify internship - basic CRUD backend app.
+Using Django development server and sqlite3 DB for a demo, can be easily upgraded if needed.
 
 ## Stack
 
-Django, sqlite3, Bootstrap
+Django, sqlite3, Bootstrap. Sqlite3.
 
 ## Demo
 
-Link: *repl.it add link here*
+Link: "https://replit.com/@les-borkowski/inventoryapp#.replit"
+*settings.py updated for the replit demo version*
 
 ## Endpoints
 
@@ -37,4 +39,4 @@ Create .env file with 'SECRET_KEY=valuehere' key
 python manage.py createsuperuser - create main to access Django Admin panel  
 python manage.py makemigrations - prepare db migrations  
 python manage.py migrate - migrate the database  
-python manage.py runserver - starts the development server  
+python manage.py runserver - starts the development server
